@@ -170,7 +170,7 @@
 
 <div class="aida-bar">
   <div class="wrap">
-    <a href="index_all.html" id="backAida"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to NMDR Use Cases</a>
+    <a href="https://informatics-consultancy-firm.github.io/NMDR-Uses/" id="backAida"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to NMDR Use Cases</a>
     <span id="aidaBarText">NMDR Use Cases</span>
   </div>
 </div>
@@ -337,7 +337,7 @@
    It is read from dashboard.html in the same folder as this page
    and shown directly in the page, not in a frame.
    ============================================================ */
-var DASHBOARD_URL = 'dashboard.html';
+var DASHBOARD_URL = 'https://informatics-consultancy-firm.github.io/NMDR-Uses/dashboard.html';
 
 (function () {
   /* ---------- Country chosen on index_africa.html: keep it on the way back ---------- */
@@ -345,7 +345,7 @@ var DASHBOARD_URL = 'dashboard.html';
   var code = (params.get('country') || '').toLowerCase();
   var cname = (params.get('name') || '').trim().slice(0, 60);
   if (/^[a-z]{2}$/.test(code) && cname) {
-    document.getElementById('backAida').href = 'index_all.html?country=' + encodeURIComponent(code) + '&name=' + encodeURIComponent(cname);
+    document.getElementById('backAida').href = 'https://informatics-consultancy-firm.github.io/NMDR-Uses/?country=' + encodeURIComponent(code) + '&name=' + encodeURIComponent(cname);
     document.getElementById('aidaBarText').textContent = 'NMDR Use Cases: ' + cname;
   }
 

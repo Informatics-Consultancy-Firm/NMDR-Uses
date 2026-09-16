@@ -136,10 +136,10 @@
 <script>
 /* ============================================================
    COUNTRIES by region (UN groupings). Every country opens the
-   same NMDR Use Cases page: index_all.html?country=<code>&name=<name>
+   same NMDR Use Cases page: https://informatics-consultancy-firm.github.io/NMDR-Uses/?country=<code>&name=<name>
    Flags come from flagcdn.com, so they need internet.
    ============================================================ */
-var HOME_PAGE = 'index_all.html';
+var HOME_PAGE = 'https://informatics-consultancy-firm.github.io/NMDR-Uses/';
 var REGIONS = [{"id": "west", "name": "West Africa", "color": "#56B4E9", "countries": [{"code": "bj", "name": "Benin"}, {"code": "bf", "name": "Burkina Faso"}, {"code": "cv", "name": "Cabo Verde"}, {"code": "ci", "name": "Côte d'Ivoire"}, {"code": "gm", "name": "Gambia"}, {"code": "gh", "name": "Ghana"}, {"code": "gn", "name": "Guinea"}, {"code": "gw", "name": "Guinea-Bissau"}, {"code": "lr", "name": "Liberia"}, {"code": "ml", "name": "Mali"}, {"code": "mr", "name": "Mauritania"}, {"code": "ne", "name": "Niger"}, {"code": "ng", "name": "Nigeria"}, {"code": "sn", "name": "Senegal"}, {"code": "sl", "name": "Sierra Leone"}, {"code": "tg", "name": "Togo"}]}, {"id": "central", "name": "Central Africa", "color": "#009E73", "countries": [{"code": "ao", "name": "Angola"}, {"code": "cm", "name": "Cameroon"}, {"code": "cf", "name": "Central African Republic"}, {"code": "td", "name": "Chad"}, {"code": "cg", "name": "Congo"}, {"code": "cd", "name": "DR Congo"}, {"code": "gq", "name": "Equatorial Guinea"}, {"code": "ga", "name": "Gabon"}, {"code": "st", "name": "São Tomé and Príncipe"}]}, {"id": "east", "name": "East Africa", "color": "#E69F00", "countries": [{"code": "bi", "name": "Burundi"}, {"code": "km", "name": "Comoros"}, {"code": "dj", "name": "Djibouti"}, {"code": "er", "name": "Eritrea"}, {"code": "et", "name": "Ethiopia"}, {"code": "ke", "name": "Kenya"}, {"code": "mg", "name": "Madagascar"}, {"code": "mw", "name": "Malawi"}, {"code": "mu", "name": "Mauritius"}, {"code": "mz", "name": "Mozambique"}, {"code": "rw", "name": "Rwanda"}, {"code": "sc", "name": "Seychelles"}, {"code": "so", "name": "Somalia"}, {"code": "ss", "name": "South Sudan"}, {"code": "tz", "name": "Tanzania"}, {"code": "ug", "name": "Uganda"}, {"code": "zm", "name": "Zambia"}, {"code": "zw", "name": "Zimbabwe"}]}, {"id": "southern", "name": "Southern Africa", "color": "#CC79A7", "countries": [{"code": "bw", "name": "Botswana"}, {"code": "sz", "name": "Eswatini"}, {"code": "ls", "name": "Lesotho"}, {"code": "na", "name": "Namibia"}, {"code": "za", "name": "South Africa"}]}, {"id": "north", "name": "North Africa", "color": "#F0E442", "countries": [{"code": "dz", "name": "Algeria"}, {"code": "eg", "name": "Egypt"}, {"code": "ly", "name": "Libya"}, {"code": "ma", "name": "Morocco"}, {"code": "sd", "name": "Sudan"}, {"code": "tn", "name": "Tunisia"}]}];
 
 (function () {
@@ -191,7 +191,7 @@ var REGIONS = [{"id": "west", "name": "West Africa", "color": "#56B4E9", "countr
     var go = a.href;
     fetch(HOME_PAGE, { method: 'HEAD', cache: 'no-store' }).then(function (r) {
       if (r.ok) { location.href = go; return; }
-      notice.innerHTML = '<code>' + esc(HOME_PAGE) + '</code> is not on the server, so the country page cannot open. Upload it beside <code>index_africa.html</code>, spelled exactly like that.';
+      notice.innerHTML = '<code>index.html</code> is not on the server, so the country page cannot open. Upload it beside <code>index_africa.html</code>, spelled exactly like that.';
       notice.classList.add('show');
       notice.scrollIntoView({ block: 'center' });
     }).catch(function () { location.href = go; });

@@ -181,7 +181,7 @@
 
 <div class="aida-bar">
   <div class="wrap">
-    <a href="index_all.html" id="backAida"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to NMDR Use Cases</a>
+    <a href="https://informatics-consultancy-firm.github.io/NMDR-Uses/" id="backAida"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to NMDR Use Cases</a>
     <span id="aidaBarText">NMDR Use Cases</span>
   </div>
 </div>
@@ -229,9 +229,9 @@
     <div class="status">
       <h3>Written up, not yet configured</h3>
       <p>This use case is written up from the NMCP document. The step by step walkthrough with screenshots and the live output will be added when it is configured.</p>
-      <p>For a fully configured example, see <a href="use_case2.html">Use Case 2</a>.</p>
+      <p>For a fully configured example, see <a href="https://informatics-consultancy-firm.github.io/NMDR-Uses/use_case2.html">Use Case 2</a>.</p>
     </div>
-    <div class="uc-pager"><span></span><a href="use_case2.html">Use Case 2 &rarr;</a></div>
+    <div class="uc-pager"><span></span><a href="https://informatics-consultancy-firm.github.io/NMDR-Uses/use_case2.html">Use Case 2 &rarr;</a></div>
   </section>
 
 </main>
@@ -240,5 +240,19 @@
   <div class="wrap">Sierra Leone National Malaria Data Repository. National Malaria Control Programme, Ministry of Health.</div>
 </footer>
 
+<script>
+/* Country chosen on index_africa.html: keep it on every link out of this page */
+(function () {
+  var params = new URLSearchParams(location.search);
+  var code = (params.get('country') || '').toLowerCase();
+  var cname = (params.get('name') || '').trim().slice(0, 60);
+  if (!/^[a-z]{2}$/.test(code) || !cname) return;
+  var carry = 'country=' + encodeURIComponent(code) + '&name=' + encodeURIComponent(cname);
+  document.querySelectorAll('#backAida, .uc-pager a, .status a').forEach(function (a) {
+    a.href = a.href + (a.href.indexOf('?') === -1 ? '?' : '&') + carry;
+  });
+  document.getElementById('aidaBarText').textContent = 'NMDR Use Cases: ' + cname;
+})();
+</script>
 </body>
 </html>
